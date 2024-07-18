@@ -70,14 +70,13 @@ max_date = pd.to_datetime(bike_day_df['dteday']).max()
 
 with st.sidebar:
     st.image("https://raw.githubusercontent.com/Suryaaa31/Dicoding-Proyek-Analisis-Data/master/logo.png")
-
-#Mengambil start_date dan end_date dari input
-start_date, end_date = st.date_input(
+    #Mengambil start_date dan end_date dari input
+    start_date, end_date = st.date_input(
     label='Rentang Waktu',
     min_value=min_date,
     max_value=max_date,
     value=[min_date, max_date]
-)
+    )
 
 main_df = bike_day_df[(bike_day_df['dteday'] >= str(start_date)) & (bike_day_df['dteday'] <= str(end_date))]
 
